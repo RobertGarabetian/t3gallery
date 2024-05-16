@@ -3,8 +3,9 @@
 - [x] Scaffold basic ui with mock data
 - [x] Actually set up database (vercel postgres)
 - [x] Attach database to ui
-- [] Add auth (w/ Clerk)
+- [x] Add auth (w/ Clerk)
 - [] Add image upload
+- [] "Taint" (server only)
 - [] Error management (w/ Sentry)
 - [] Routing/image page (parallel route)
 - [] Delete button (w/ server actions)
