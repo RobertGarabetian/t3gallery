@@ -1,11 +1,12 @@
 ## TODO
 - [x] Make it deploy (vercel)
 - [x] Scaffold basic ui with mock data
-- [x] Actually set up database (vercel postgres)
+- [x] Actually set up database (vercel postgres) 
 - [x] Attach database to ui
 - [x] Add auth (w/ Clerk)
 - [] Add image upload
 - [] "Taint" (server only)
+- [] Use next/image component
 - [] Error management (w/ Sentry)
 - [] Routing/image page (parallel route)
 - [] Delete button (w/ server actions)
