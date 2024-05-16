@@ -1,6 +1,9 @@
+import { db } from "~/server/db";
+
 const mockUrls = [
-  "https://utfs.io/f/33cea0f0-9beb-4a0f-a885-9ffd164a98f7-1p8rzw.png",
-  "https://utfs.io/f/e30ed6a4-512d-470e-b93f-632ade579fd1-jo3ox0.png",
+  "https://utfs.io/f/dada04cb-e683-45f6-b8e9-3b308864260d-z7dpqd.png",
+  "https://utfs.io/f/dada04cb-e683-45f6-b8e9-3b308864260d-z7dpqd.png",
+  "https://utfs.io/f/dada04cb-e683-45f6-b8e9-3b308864260d-z7dpqd.png",
   "https://utfs.io/f/dada04cb-e683-45f6-b8e9-3b308864260d-z7dpqd.png",
 ];
 
@@ -9,12 +12,19 @@ const mockImages = mockUrls.map((url, index) => ({
   url,
 }));
 
-export default function HomePage() {
+export default async function HomePage() {
+  const posts = await db.query.posts.findMany();
+
+  console.log(posts);
+
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
-        {[...mockImages, ...mockImages, ...mockImages].map((image) => (
-          <div key={image.id} className="w-60">
+        {posts.map((post) => (
+          <div key={post.id}>{post.name}</div>
+        ))}
+        {[...mockImages, ...mockImages, ...mockImages].map((image, index) => (
+          <div key={image.id + "-" + index} className="w-60">
             <img src={image.url} alt="image" />
           </div>
         ))}
